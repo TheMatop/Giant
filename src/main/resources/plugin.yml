@@ -1,0 +1,14 @@
+name: LifeSteal
+version: '1.0'
+main: org.thematop.lifeSteal.Main
+api-version: '1.21'
+commands:
+  givesword:
+    description: Gives a magic sword
+    usage: /<command>
+  GiveAppleOfNature:
+    description: its name!!!!
+    usage: /<command>
+  ToggleGiant:
+    description: the name bro
+    usage: /<command>

@@ -18,7 +18,7 @@ public class GiveAppleOfNature implements CommandExecutor {
         }
 
         player.getInventory().addItem(Apple_of_nature.apple_of_nature(plugin));
-        player.sendMessage("You have recived the apple of nature");
+        player.sendMessage("You have received the apple of nature");
         return true;
     }
 }

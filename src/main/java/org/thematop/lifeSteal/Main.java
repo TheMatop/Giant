@@ -1,9 +1,14 @@
 package org.thematop.lifeSteal;
 
+import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.thematop.lifeSteal.Commands.GiveAppleOfNature;
 import org.thematop.lifeSteal.Commands.GiveSword;
 import org.thematop.lifeSteal.Commands.ToggleGiant;
+import org.thematop.lifeSteal.Items.Apple_of_nature;
 import org.thematop.lifeSteal.Listeners.EatingListener;
 import org.thematop.lifeSteal.Listeners.SwordAbilityListener;
 
@@ -26,5 +31,15 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new EatingListener(this), this);
 
         getLogger().severe("Command registered: " + (getCommand("givesword") != null));
+
+        NamespacedKey key = new NamespacedKey(this, "apple_of_nature");
+        ItemStack item = new ItemStack(Apple_of_nature.apple_of_nature(this));
+
+        ShapedRecipe AppleOfNature = new ShapedRecipe(key, item);
+        AppleOfNature.shape("AAA", "ABA", "AAA");
+        AppleOfNature.setIngredient('A', Material.OAK_SAPLING);
+        AppleOfNature.setIngredient('B', Material.APPLE);
+
+        getServer().addRecipe(AppleOfNature);
     }
 }

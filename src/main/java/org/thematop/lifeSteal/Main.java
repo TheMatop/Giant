@@ -11,6 +11,7 @@ import org.thematop.lifeSteal.Commands.ToggleGiant;
 import org.thematop.lifeSteal.Items.Apple_of_nature;
 import org.thematop.lifeSteal.Listeners.EatingListener;
 import org.thematop.lifeSteal.Listeners.SwordAbilityListener;
+import org.thematop.lifeSteal.Listeners.TitanRoarListener;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,6 +30,7 @@ public class Main extends JavaPlugin {
         getCommand("GiveAppleOfNature").setExecutor(new GiveAppleOfNature());
         getServer().getPluginManager().registerEvents(new SwordAbilityListener(this), this);
         getServer().getPluginManager().registerEvents(new EatingListener(this), this);
+        getServer().getPluginManager().registerEvents(new TitanRoarListener(this), this);
 
         getLogger().severe("Command registered: " + (getCommand("givesword") != null));
 
